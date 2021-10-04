@@ -1,4 +1,12 @@
 [[package]]
+name = "alabaster"
+version = "0.7.12"
+description = "A configurable sidebar-enabled Sphinx theme"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "appdirs"
 version = "1.4.4"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -32,6 +40,17 @@ docs = ["sphinx"]
 tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pytest"]
 
 [[package]]
+name = "arrow"
+version = "1.2.0"
+description = "Better dates & times for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+python-dateutil = ">=2.7.0"
+
+[[package]]
 name = "async-generator"
 version = "1.10"
 description = "Async generators and context managers for Python 3.5+"
@@ -62,6 +81,17 @@ tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)"
 tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins"]
 
 [[package]]
+name = "babel"
+version = "2.9.1"
+description = "Internationalization utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+pytz = ">=2015.7"
+
+[[package]]
 name = "backcall"
 version = "0.2.0"
 description = "Specifications for callback functions passed in to an API"
@@ -83,6 +113,18 @@ soupsieve = {version = ">1.2", markers = "python_version >= \"3.0\""}
 [package.extras]
 html5lib = ["html5lib"]
 lxml = ["lxml"]
+
+[[package]]
+name = "bibtexparser"
+version = "1.2.0"
+description = "Bibtex parser for python 2.7 and 3.3 and newer"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+future = ">=0.16.0"
+pyparsing = ">=2.0.3"
 
 [[package]]
 name = "black"
@@ -180,7 +222,7 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 name = "colorama"
 version = "0.4.4"
 description = "Cross-platform colored terminal text."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -229,6 +271,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "docutils"
+version = "0.17.1"
+description = "Docutils -- Python Documentation Utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
 name = "emails"
 version = "0.6"
 description = "Modern python library for emails."
@@ -253,6 +303,14 @@ optional = false
 python-versions = ">=2.7"
 
 [[package]]
+name = "fake-useragent"
+version = "0.1.11"
+description = "Up to date simple useragent faker with real world database"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "flake8"
 version = "3.9.2"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -266,12 +324,40 @@ pycodestyle = ">=2.7.0,<2.8.0"
 pyflakes = ">=2.3.0,<2.4.0"
 
 [[package]]
+name = "free-proxy"
+version = "1.0.3"
+description = "Proxy scraper for further use"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+lxml = "*"
+requests = "*"
+
+[[package]]
+name = "future"
+version = "0.18.2"
+description = "Clean single-source support for Python 3 and 2"
+category = "main"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
 name = "idna"
 version = "3.2"
 description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "imagesize"
+version = "1.2.0"
+description = "Getting image size from png/jpeg/jpeg2000/gif file"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "ipykernel"
@@ -385,7 +471,7 @@ testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<6.0.0)"]
 name = "jinja2"
 version = "3.0.1"
 description = "A very fast and expressive template engine."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -526,7 +612,7 @@ testing = ["coverage", "pyyaml"]
 name = "markupsafe"
 version = "2.0.1"
 description = "Safely add untrusted strings to HTML/XML markup."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -706,7 +792,7 @@ python-versions = ">=3.7"
 name = "packaging"
 version = "21.0"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -775,18 +861,6 @@ description = "Tiny 'shelve'-like database with concurrency support"
 category = "dev"
 optional = false
 python-versions = "*"
-
-[[package]]
-name = "plotly"
-version = "5.1.0"
-description = "An open-source, interactive data visualization library for Python"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-six = "*"
-tenacity = ">=6.2.0"
 
 [[package]]
 name = "pluggy"
@@ -899,7 +973,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "pygments"
 version = "2.9.0"
 description = "Pygments is a syntax highlighting package written in Python."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -907,7 +981,7 @@ python-versions = ">=3.5"
 name = "pyparsing"
 version = "2.4.7"
 description = "Python parsing module"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -918,6 +992,14 @@ description = "Persistent/Functional/Immutable data structures"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "pysocks"
+version = "1.7.1"
+description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pytest"
@@ -953,8 +1035,19 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-dotenv"
+version = "0.19.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "pytz"
-version = "2021.1"
+version = "2021.3"
 description = "World timezone definitions, modern and historical"
 category = "main"
 optional = false
@@ -1045,6 +1138,39 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
+name = "scholarly"
+version = "1.4.1"
+description = "Simple access to Google Scholar authors and citations"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+arrow = "*"
+beautifulsoup4 = "*"
+bibtexparser = "*"
+fake-useragent = "*"
+free-proxy = "*"
+PySocks = "*"
+python-dotenv = "*"
+requests = {version = "*", extras = ["security"]}
+selenium = "*"
+sphinx-rtd-theme = "*"
+stem = "*"
+typing-extensions = "*"
+
+[[package]]
+name = "selenium"
+version = "3.141.0"
+description = "Python bindings for Selenium"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+urllib3 = "*"
+
+[[package]]
 name = "send2trash"
 version = "1.8.0"
 description = "Send file to trash natively under Mac OS X, Windows and Linux."
@@ -1066,6 +1192,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
+name = "snowballstemmer"
+version = "2.1.0"
+description = "This package provides 29 stemmers for 28 languages generated from Snowball algorithms."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "soupsieve"
 version = "2.2.1"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -1074,15 +1208,129 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
-name = "tenacity"
-version = "8.0.1"
-description = "Retry code until it succeeds"
+name = "sphinx"
+version = "4.2.0"
+description = "Python documentation generator"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+alabaster = ">=0.7,<0.8"
+babel = ">=1.3"
+colorama = {version = ">=0.3.5", markers = "sys_platform == \"win32\""}
+docutils = ">=0.14,<0.18"
+imagesize = "*"
+Jinja2 = ">=2.3"
+packaging = "*"
+Pygments = ">=2.0"
+requests = ">=2.5.0"
+snowballstemmer = ">=1.1"
+sphinxcontrib-applehelp = "*"
+sphinxcontrib-devhelp = "*"
+sphinxcontrib-htmlhelp = ">=2.0.0"
+sphinxcontrib-jsmath = "*"
+sphinxcontrib-qthelp = "*"
+sphinxcontrib-serializinghtml = ">=1.1.5"
+
+[package.extras]
+docs = ["sphinxcontrib-websupport"]
+lint = ["flake8 (>=3.5.0)", "isort", "mypy (>=0.900)", "docutils-stubs", "types-typed-ast", "types-pkg-resources", "types-requests"]
+test = ["pytest", "pytest-cov", "html5lib", "cython", "typed-ast"]
+
+[[package]]
+name = "sphinx-rtd-theme"
+version = "1.0.0"
+description = "Read the Docs theme for Sphinx"
+category = "main"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
+
+[package.dependencies]
+docutils = "<0.18"
+sphinx = ">=1.6"
+
+[package.extras]
+dev = ["transifex-client", "sphinxcontrib-httpdomain", "bump2version"]
+
+[[package]]
+name = "sphinxcontrib-applehelp"
+version = "1.0.2"
+description = "sphinxcontrib-applehelp is a sphinx extension which outputs Apple help books"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-devhelp"
+version = "1.0.2"
+description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp document."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-htmlhelp"
+version = "2.0.0"
+description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-doc = ["reno", "sphinx", "tornado (>=4.5)"]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest", "html5lib"]
+
+[[package]]
+name = "sphinxcontrib-jsmath"
+version = "1.0.1"
+description = "A sphinx extension which renders display math in HTML via JavaScript"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+test = ["pytest", "flake8", "mypy"]
+
+[[package]]
+name = "sphinxcontrib-qthelp"
+version = "1.0.3"
+description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest"]
+
+[[package]]
+name = "sphinxcontrib-serializinghtml"
+version = "1.1.5"
+description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+lint = ["flake8", "mypy", "docutils-stubs"]
+test = ["pytest"]
+
+[[package]]
+name = "stem"
+version = "1.8.0"
+description = "Stem is a Python controller library that allows applications to interact with Tor (https://www.torproject.org/)."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "terminado"
@@ -1192,9 +1440,13 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "fa9d6ee60a7d0e995690a70d98056ef887020f4911eb214462d51388af8f46df"
+content-hash = "e548dffe61171e00c29a1c59e9694ad62c49d8cf50ae6ae0c8ef71da3b5d9815"
 
 [metadata.files]
+alabaster = [
+    {file = "alabaster-0.7.12-py2.py3-none-any.whl", hash = "sha256:446438bdcca0e05bd45ea2de1668c1d9b032e1a9154c2c259092d77031ddd359"},
+    {file = "alabaster-0.7.12.tar.gz", hash = "sha256:a661d72d58e6ea8a57f7a86e37d86716863ee5e92788398526d58b26a4e4dc02"},
+]
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
     {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
@@ -1223,6 +1475,10 @@ argon2-cffi = [
     {file = "argon2_cffi-20.1.0-cp39-cp39-win32.whl", hash = "sha256:e2db6e85c057c16d0bd3b4d2b04f270a7467c147381e8fd73cbbe5bc719832be"},
     {file = "argon2_cffi-20.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:8a84934bd818e14a17943de8099d41160da4a336bcc699bb4c394bbb9b94bd32"},
 ]
+arrow = [
+    {file = "arrow-1.2.0-py3-none-any.whl", hash = "sha256:8fb7d9d3d4bf90e49e734c22fa077bdd0964135c4b8120de2510575a8d1f620c"},
+    {file = "arrow-1.2.0.tar.gz", hash = "sha256:16fc29bbd9e425e3eb0fef3018297910a0f4568f21116fc31771e2760a50e074"},
+]
 async-generator = [
     {file = "async_generator-1.10-py3-none-any.whl", hash = "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b"},
     {file = "async_generator-1.10.tar.gz", hash = "sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"},
@@ -1235,6 +1491,10 @@ attrs = [
     {file = "attrs-21.2.0-py2.py3-none-any.whl", hash = "sha256:149e90d6d8ac20db7a955ad60cf0e6881a3f20d37096140088356da6c716b0b1"},
     {file = "attrs-21.2.0.tar.gz", hash = "sha256:ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"},
 ]
+babel = [
+    {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
+    {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
+]
 backcall = [
     {file = "backcall-0.2.0-py2.py3-none-any.whl", hash = "sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"},
     {file = "backcall-0.2.0.tar.gz", hash = "sha256:5cbdbf27be5e7cfadb448baf0aa95508f91f2bbc6c6437cd9cd06e2a4c215e1e"},
@@ -1243,6 +1503,9 @@ beautifulsoup4 = [
     {file = "beautifulsoup4-4.9.3-py2-none-any.whl", hash = "sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35"},
     {file = "beautifulsoup4-4.9.3-py3-none-any.whl", hash = "sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666"},
     {file = "beautifulsoup4-4.9.3.tar.gz", hash = "sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"},
+]
+bibtexparser = [
+    {file = "bibtexparser-1.2.0.tar.gz", hash = "sha256:0f9ab94e3fc36ee2ee6a3713c5dd7320d4b6ee52bd66ecbab03c6b06675ae410"},
 ]
 black = [
     {file = "black-21.7b0-py3-none-any.whl", hash = "sha256:1c7aa6ada8ee864db745b22790a32f94b2795c253a75d6d9b5e439ff10d23116"},
@@ -1397,6 +1660,10 @@ defusedxml = [
     {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
 ]
+docutils = [
+    {file = "docutils-0.17.1-py2.py3-none-any.whl", hash = "sha256:cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"},
+    {file = "docutils-0.17.1.tar.gz", hash = "sha256:686577d2e4c32380bb50cbb22f575ed742d58168cee37e99117a854bcd88f125"},
+]
 emails = [
     {file = "emails-0.6-py2.py3-none-any.whl", hash = "sha256:72c1e3198075709cc35f67e1b49e2da1a2bc087e9b444073db61a379adfb7f3c"},
     {file = "emails-0.6.tar.gz", hash = "sha256:a4c2d67ea8b8831967a750d8edc6e77040d7693143fe280e6d2a367d9c36ff88"},
@@ -1405,13 +1672,26 @@ entrypoints = [
     {file = "entrypoints-0.3-py2.py3-none-any.whl", hash = "sha256:589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19"},
     {file = "entrypoints-0.3.tar.gz", hash = "sha256:c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"},
 ]
+fake-useragent = [
+    {file = "fake-useragent-0.1.11.tar.gz", hash = "sha256:c104998b750eb097eefc28ae28e92d66397598d2cf41a31aa45d5559ef1adf35"},
+]
 flake8 = [
     {file = "flake8-3.9.2-py2.py3-none-any.whl", hash = "sha256:bf8fd333346d844f616e8d47905ef3a3384edae6b4e9beb0c5101e25e3110907"},
     {file = "flake8-3.9.2.tar.gz", hash = "sha256:07528381786f2a6237b061f6e96610a4167b226cb926e2aa2b6b1d78057c576b"},
 ]
+free-proxy = [
+    {file = "free_proxy-1.0.3.tar.gz", hash = "sha256:96f855e96321aa5826cfe7ba3f8a183f09fc09737c7f138f25a3d05205db476f"},
+]
+future = [
+    {file = "future-0.18.2.tar.gz", hash = "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"},
+]
 idna = [
     {file = "idna-3.2-py3-none-any.whl", hash = "sha256:14475042e284991034cb48e06f6851428fb14c4dc953acd9be9a5e95c7b6dd7a"},
     {file = "idna-3.2.tar.gz", hash = "sha256:467fbad99067910785144ce333826c71fb0e63a425657295239737f7ecd125f3"},
+]
+imagesize = [
+    {file = "imagesize-1.2.0-py2.py3-none-any.whl", hash = "sha256:6965f19a6a2039c7d48bca7dba2473069ff854c36ae6f19d2cde309d998228a1"},
+    {file = "imagesize-1.2.0.tar.gz", hash = "sha256:b1f6b5a4eab1f73479a50fb79fcf729514a900c341d8503d62a62dbc4127a2b1"},
 ]
 ipykernel = [
     {file = "ipykernel-6.0.3-py3-none-any.whl", hash = "sha256:9f9f41a14caf2fde2b7802446adf83885afcbf50585a46d6c687292599a3c3af"},
@@ -1665,10 +1945,6 @@ pickleshare = [
     {file = "pickleshare-0.7.5-py2.py3-none-any.whl", hash = "sha256:9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"},
     {file = "pickleshare-0.7.5.tar.gz", hash = "sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca"},
 ]
-plotly = [
-    {file = "plotly-5.1.0-py2.py3-none-any.whl", hash = "sha256:d60412ee21d85102f67e5c7134d59feb5e42a5cbbfb1e580ad67cbdf7589d80c"},
-    {file = "plotly-5.1.0.tar.gz", hash = "sha256:71f6744acdc524c22236c226d7cf1072d1a58ebacaf749c640998298472c8c44"},
-]
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
@@ -1760,6 +2036,11 @@ pyrsistent = [
     {file = "pyrsistent-0.18.0-cp39-cp39-win_amd64.whl", hash = "sha256:404e1f1d254d314d55adb8d87f4f465c8693d6f902f67eb6ef5b4526dc58e6ea"},
     {file = "pyrsistent-0.18.0.tar.gz", hash = "sha256:773c781216f8c2900b42a7b638d5b517bb134ae1acbebe4d1e8f1f41ea60eb4b"},
 ]
+pysocks = [
+    {file = "PySocks-1.7.1-py27-none-any.whl", hash = "sha256:08e69f092cc6dbe92a0fdd16eeb9b9ffbc13cadfe5ca4c7bd92ffb078b293299"},
+    {file = "PySocks-1.7.1-py3-none-any.whl", hash = "sha256:2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5"},
+    {file = "PySocks-1.7.1.tar.gz", hash = "sha256:3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"},
+]
 pytest = [
     {file = "pytest-5.4.3-py3-none-any.whl", hash = "sha256:5c0db86b698e8f170ba4582a492248919255fcd4c79b1ee64ace34301fb589a1"},
     {file = "pytest-5.4.3.tar.gz", hash = "sha256:7979331bfcba207414f5e1263b5a0f8f521d0f457318836a7355531ed1a4c7d8"},
@@ -1768,9 +2049,13 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
+python-dotenv = [
+    {file = "python-dotenv-0.19.0.tar.gz", hash = "sha256:f521bc2ac9a8e03c736f62911605c5d83970021e3fa95b37d769e2bbbe9b6172"},
+    {file = "python_dotenv-0.19.0-py2.py3-none-any.whl", hash = "sha256:aae25dc1ebe97c420f50b81fb0e5c949659af713f31fdb63c749ca68748f34b1"},
+]
 pytz = [
-    {file = "pytz-2021.1-py2.py3-none-any.whl", hash = "sha256:eb10ce3e7736052ed3623d49975ce333bcd712c7bb19a58b9e2089d4057d0798"},
-    {file = "pytz-2021.1.tar.gz", hash = "sha256:83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da"},
+    {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},
+    {file = "pytz-2021.3.tar.gz", hash = "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"},
 ]
 pywin32 = [
     {file = "pywin32-301-cp35-cp35m-win32.whl", hash = "sha256:93367c96e3a76dfe5003d8291ae16454ca7d84bb24d721e0b74a07610b7be4a7"},
@@ -1877,6 +2162,14 @@ requests = [
     {file = "requests-2.26.0-py2.py3-none-any.whl", hash = "sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24"},
     {file = "requests-2.26.0.tar.gz", hash = "sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"},
 ]
+scholarly = [
+    {file = "scholarly-1.4.1-py3-none-any.whl", hash = "sha256:49d605890c8525903d95e18c3c39666ed074b93ab66b1de1c3f58089573e3601"},
+    {file = "scholarly-1.4.1.tar.gz", hash = "sha256:8afd935424b5e43e03f0ceea0afb632b8a98f1a9c9623e05b912f328cc9c32a7"},
+]
+selenium = [
+    {file = "selenium-3.141.0-py2.py3-none-any.whl", hash = "sha256:2d7131d7bc5a5b99a2d9b04aaf2612c411b03b8ca1b1ee8d3de5845a9be2cb3c"},
+    {file = "selenium-3.141.0.tar.gz", hash = "sha256:deaf32b60ad91a4611b98d8002757f29e6f2c2d5fcaf202e1c9ad06d6772300d"},
+]
 send2trash = [
     {file = "Send2Trash-1.8.0-py3-none-any.whl", hash = "sha256:f20eaadfdb517eaca5ce077640cb261c7d2698385a6a0f072a4a5447fd49fa08"},
     {file = "Send2Trash-1.8.0.tar.gz", hash = "sha256:d2c24762fd3759860a0aff155e45871447ea58d2be6bdd39b5c8f966a0c99c2d"},
@@ -1885,13 +2178,48 @@ six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
+snowballstemmer = [
+    {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
+    {file = "snowballstemmer-2.1.0.tar.gz", hash = "sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"},
+]
 soupsieve = [
     {file = "soupsieve-2.2.1-py3-none-any.whl", hash = "sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b"},
     {file = "soupsieve-2.2.1.tar.gz", hash = "sha256:052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc"},
 ]
-tenacity = [
-    {file = "tenacity-8.0.1-py3-none-any.whl", hash = "sha256:f78f4ea81b0fabc06728c11dc2a8c01277bfc5181b321a4770471902e3eb844a"},
-    {file = "tenacity-8.0.1.tar.gz", hash = "sha256:43242a20e3e73291a28bcbcacfd6e000b02d3857a9a9fff56b297a27afdc932f"},
+sphinx = [
+    {file = "Sphinx-4.2.0-py3-none-any.whl", hash = "sha256:98a535c62a4fcfcc362528592f69b26f7caec587d32cd55688db580be0287ae0"},
+    {file = "Sphinx-4.2.0.tar.gz", hash = "sha256:94078db9184491e15bce0a56d9186e0aec95f16ac20b12d00e06d4e36f1058a6"},
+]
+sphinx-rtd-theme = [
+    {file = "sphinx_rtd_theme-1.0.0-py2.py3-none-any.whl", hash = "sha256:4d35a56f4508cfee4c4fb604373ede6feae2a306731d533f409ef5c3496fdbd8"},
+    {file = "sphinx_rtd_theme-1.0.0.tar.gz", hash = "sha256:eec6d497e4c2195fa0e8b2016b337532b8a699a68bcb22a512870e16925c6a5c"},
+]
+sphinxcontrib-applehelp = [
+    {file = "sphinxcontrib-applehelp-1.0.2.tar.gz", hash = "sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58"},
+    {file = "sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl", hash = "sha256:806111e5e962be97c29ec4c1e7fe277bfd19e9652fb1a4392105b43e01af885a"},
+]
+sphinxcontrib-devhelp = [
+    {file = "sphinxcontrib-devhelp-1.0.2.tar.gz", hash = "sha256:ff7f1afa7b9642e7060379360a67e9c41e8f3121f2ce9164266f61b9f4b338e4"},
+    {file = "sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl", hash = "sha256:8165223f9a335cc1af7ffe1ed31d2871f325254c0423bc0c4c7cd1c1e4734a2e"},
+]
+sphinxcontrib-htmlhelp = [
+    {file = "sphinxcontrib-htmlhelp-2.0.0.tar.gz", hash = "sha256:f5f8bb2d0d629f398bf47d0d69c07bc13b65f75a81ad9e2f71a63d4b7a2f6db2"},
+    {file = "sphinxcontrib_htmlhelp-2.0.0-py2.py3-none-any.whl", hash = "sha256:d412243dfb797ae3ec2b59eca0e52dac12e75a241bf0e4eb861e450d06c6ed07"},
+]
+sphinxcontrib-jsmath = [
+    {file = "sphinxcontrib-jsmath-1.0.1.tar.gz", hash = "sha256:a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8"},
+    {file = "sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl", hash = "sha256:2ec2eaebfb78f3f2078e73666b1415417a116cc848b72e5172e596c871103178"},
+]
+sphinxcontrib-qthelp = [
+    {file = "sphinxcontrib-qthelp-1.0.3.tar.gz", hash = "sha256:4c33767ee058b70dba89a6fc5c1892c0d57a54be67ddd3e7875a18d14cba5a72"},
+    {file = "sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl", hash = "sha256:bd9fc24bcb748a8d51fd4ecaade681350aa63009a347a8c14e637895444dfab6"},
+]
+sphinxcontrib-serializinghtml = [
+    {file = "sphinxcontrib-serializinghtml-1.1.5.tar.gz", hash = "sha256:aa5f6de5dfdf809ef505c4895e51ef5c9eac17d0f287933eb49ec495280b6952"},
+    {file = "sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl", hash = "sha256:352a9a00ae864471d3a7ead8d7d79f5fc0b57e8b3f95e9867eb9eb28999b92fd"},
+]
+stem = [
+    {file = "stem-1.8.0.tar.gz", hash = "sha256:a0b48ea6224e95f22aa34c0bc3415f0eb4667ddeae3dfb5e32a6920c185568c2"},
 ]
 terminado = [
     {file = "terminado-0.10.1-py3-none-any.whl", hash = "sha256:c89ace5bffd0e7268bdcf22526830eb787fd146ff9d78691a0528386f92b9ae3"},
