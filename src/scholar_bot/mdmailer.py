@@ -18,6 +18,6 @@ mdmail.send(
     email,
     subject="Sample Email",
     from_email="nanthony007@gmail.com",
-    to_email="michelledg0326@gmail.com",
+    to_email="nanthony007@gmail.com",
     smtp=smtp,
 )
