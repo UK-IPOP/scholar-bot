@@ -1,28 +1,23 @@
-from typing import Optional
 from pydantic import BaseModel
-import csv
+import datetime
+
+
+class YearCites(BaseModel):
+    year: int
+    cites: int
 
 
 class Scholar(BaseModel):
-    name: Optional[str]
-    citations: Optional[int]
-    entries: Optional[int]
-    h_index: Optional[int]
-    i10_index: Optional[int]
+    name: str
+    gs_id: str
+    affiliation: str
+    h_index: int
+    i10_index: int
+    cited_by: int
+    cites_per_year: list[YearCites]
+    pub_count: int
 
-    @classmethod
-    def make_scholars(cls) -> list[dict[str, str]]:
-        data = []
-        with open("data/COPscholars.csv", "r") as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                data.append(
-                    cls(
-                        name=row["Name"],
-                        citations=row["Citations"],
-                        entries=row["Entries"],
-                        h_index=row["h-index"],
-                        i10_index=row["i10-index"],
-                    )
-                )
-        return data
+
+class Scholars(BaseModel):
+    last_updated: datetime.datetime
+    scholars: list[Scholar]
