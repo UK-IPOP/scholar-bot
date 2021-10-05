@@ -92,6 +92,7 @@ while not DONE:
         day = datetime.date.today().strftime("%Y-%m-%d")
         with open(f"./data/failed_{day}.csv", "w") as f:
             csvwriter = csv.DictWriter(f, fieldnames=["name", "gsid"])
+            csvwriter.writeheader()
             for name, gsid in scholar_names:
                 if name in failed:
                     csvwriter.writerow({"name": name, "gsid": gsid})
