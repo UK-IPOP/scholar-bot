@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pandas as pd
 import datetime
 
@@ -14,7 +16,7 @@ def split_weekly_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     df["day_diff"] = df.day_added.apply(lambda x: (today - x).days)
 
     today_data = df[df.day_added == today].copy()
-    weekly_data = df[df.day_diff >= 7]
+    weekly_data = df[df.day_diff <= 7]
     return today_data, weekly_data
 
 
@@ -32,4 +34,4 @@ def get_metrics_change(author: str) -> dict[str, int]:
 
 
 # example usage
-print(get_metrics_change("Adam Sieg"))
+# print(get_metrics_change("Adam Sieg"))
