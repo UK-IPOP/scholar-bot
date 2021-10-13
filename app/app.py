@@ -1,26 +1,29 @@
+from ctypes import resize
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import sections
+
+
+alert_container = st.empty()
 
 st.markdown(
     """
-# UK IPOP Scholar Bot
+# UK COP / IPOP Scholar Bot
 
 Sponsored by University of Kentucky Institute for Pharmaceutical Outcomes and Policy.
 
-This bot runs weekly to collect new Google Scholar data and email updated statistics to anyone subscribed to the bot.
+This bot runs weekly to collect new Google Scholar data and email updated statistics to
+anyone subscribed to the bot.
+
+This project is open-source on [GitHub](https://github.com/UK-IPOP/scholar-bot).
 
 """
 )
 
-col1, col2 = st.columns(2)
 
-with col1:
-    st.image("assets/UK-COP-logo.jpg")
-
-
-with col2:
-    st.image("assets/IPOP-logo.png")
+# sidebar section
+sections.sidebar_content()
 
 
 df = pd.read_csv("data/scholar_data.csv")
@@ -46,7 +49,7 @@ st.header("Leaderboard")
 st.plotly_chart(bar_chart, use_container_width=True)
 
 
-st.header("Citations Per Year")
+st.header("Author Citations Per Year")
 selected_author = st.selectbox("Author Name:", df["name"].unique(), index=0)
 
 author_table = df[df["name"] == selected_author]
@@ -58,11 +61,25 @@ with st.expander("Author Info"):
             "Name": row["name"],
             "Affiliation": row["affiliation"],
             "hIndex": row["h_index"],
-            "i10 Index": row["i10_index"],
+            "i10Index": row["i10_index"],
             "Publication Count": row["pub_count"],
             "Total Citations": row["cited_by"],
         }
     )
+    st.markdown(
+        f"""
+    **Name**: {row["name"]}
+
+    **Affiliation**: {row["affiliation"]}
+    """
+    )
+    with st.container():
+        stat1, stat2, stat3, stat4 = st.columns(4)
+        # TODO: add changes (week) to stats
+        stat1.metric(label="h-Index", value=int(row["h_index"]))
+        stat2.metric(label="i10-Index", value=int(row["i10_index"]))
+        stat3.metric(label="Publications", value=int(row["pub_count"]))
+        stat4.metric(label="Citations", value=int(row["cited_by"]))
 
 
 line_chart = (
@@ -81,29 +98,12 @@ line_chart = (
 st.plotly_chart(line_chart, use_container_width=True)
 
 
-def remove_author(name):
-    # TODO: adjust to email
-    df = pd.read_csv("data/scholars.csv")
-    if name not in df.Name.unique():
-        st.error("Could not find you.")
-        return False
-    df = df[df["Name"] != name]
-    df.to_csv("data/scholars.csv", index=False)
-    return True
-
-
-st.header("Unsubscribe")
+st.header("Raw Data Table")
 st.markdown(
-    """
-To unsubscribe from the bot, enter your email and click submit.
-"""
+    "[Link to Data](https://github.com/UK-IPOP/scholar-bot/blob/main/data/scholar_data.csv)"
 )
-
-with st.form("unsubscribe-form"):
-    email = st.text_input("Email:")
-
-    # Every form must have a submit button.
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        if remove_author(email):
-            st.success("You are now unsubscribed from the bot.")
+display_table = df[["name", "h_index", "i10_index", "pub_count", "cited_by"]]
+display_table.columns = ["Name", "hIndex", "i10Index", "Publications", "Citations"]
+display_table.drop_duplicates(inplace=True)
+display_table.reset_index(drop=True, inplace=True)
+st.dataframe(display_table)
